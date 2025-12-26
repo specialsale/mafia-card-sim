@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #4ec9b0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.terminal {
+    background: #252526;
+    border: 1px solid #3e3e42;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+    background: #2d2d30;
+    padding: 10px 15px;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.terminal-title {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.terminal-body {
+    padding: 15px;
+    max-height: 80vh;
+    overflow-y: auto;
+    min-height: 400px;
+}
+
+.output-line {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.prompt-line {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.prompt {
+    color: #4ec9b0;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.command-input {
+    background: transparent;
+    border: none;
+    color: #d4d4d4;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    flex: 1;
+    outline: none;
+}
+
+.command-input::placeholder {
+    color: #6a6a6a;
+}
+
+.card-result {
+    background: #1e1e1e;
+    border-left: 3px solid #4ec9b0;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.card-result h3 {
+    color: #4ec9b0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.tier-section {
+    margin: 10px 0;
+    padding: 8px;
+    background: #2d2d30;
+    border-radius: 3px;
+}
+
+.tier-label {
+    color: #ce9178;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.tier-value {
+    color: #d4d4d4;
+}
+
+.separator {
+    margin: 20px 0;
+    border-top: 1px solid #3e3e42;
+}
+
+.error {
+    color: #f48771;
+}
+
+.success {
+    color: #4ec9b0;
+}
+
+.info {
+    color: #569cd6;
+}
+
+/* 탭 스타일 */
+.tab-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background: #2d2d30;
+    border: 1px solid #3e3e42;
+    color: #d4d4d4;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.tab-button:hover {
+    background: #3e3e42;
+}
+
+.tab-button.active {
+    background: #252526;
+    border-bottom-color: #252526;
+    color: #4ec9b0;
+}
+
+.tab-content {
+    display: none !important;
+}
+
+.tab-content.active {
+    display: block !important;
+}
+
+/* 확률 계산 시뮬레이터 스타일 */
+.probability-calculator {
+    background: #252526;
+    border: 1px solid #3e3e42;
+    border-radius: 4px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.calc-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #1e1e1e;
+    border-radius: 4px;
+    border-left: 3px solid #4ec9b0;
+}
+
+.calc-section h3 {
+    color: #4ec9b0;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #d4d4d4;
+    padding: 8px 12px;
+    background: #2d2d30;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.checkbox-group label:hover {
+    background: #3e3e42;
+}
+
+.checkbox-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-group label:has(input:checked) {
+    background: #3e3e42;
+    color: #4ec9b0;
+}
+
+/* 호환성을 위한 대체 스타일 */
+.checkbox-group input[type="radio"]:checked,
+.checkbox-group input[type="checkbox"]:checked {
+    accent-color: #4ec9b0;
+}
+
+.probability-display {
+    margin-top: 15px;
+    padding: 10px;
+    background: #2d2d30;
+    border-radius: 4px;
+    color: #4ec9b0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.final-probability {
+    text-align: center;
+    padding: 20px;
+    background: #2d2d30;
+    border-radius: 4px;
+    border: 2px solid #4ec9b0;
+}
+
+.final-probability h2 {
+    color: #4ec9b0;
+    font-size: 24px;
+    margin: 0;
+}
+

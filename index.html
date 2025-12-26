@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마피아42 카드 뽑기 시뮬레이터</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tab-container">
+            <button class="tab-button active" data-tab="simulator">뽑기 시뮬레이터</button>
+            <button class="tab-button" data-tab="probability">확률 계산 시뮬레이터</button>
+        </div>
+        
+        <div id="simulator-tab" class="tab-content active">
+            <h1>마피아42 카드 뽑기 시뮬레이터</h1>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="terminal-title">터미널</span>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <div class="output-line">마피아42 카드 뽑기 시뮬레이터에 오신 것을 환영합니다!</div>
+                    <div class="output-line">사용법: "N TIER" 형식으로 입력하세요 (예: "5 TIER" = 5티어 카드 1개)</div>
+                    <div class="output-line">또는 "N M TIER" 형식으로 입력하세요 (예: "3 5 TIER" = 5티어 카드 3개)</div>
+                    <div class="output-line">특정 직업 지정: "N M TIER 직업명" (예: "2 5 TIER 마피아" = 5티어 마피아 카드 2개)</div>
+                    <div class="output-line">티어는 1부터 6까지 가능합니다.</div>
+                    <div class="output-line prompt-line">
+                        <span class="prompt">$</span>
+                        <input type="text" id="command-input" class="command-input" placeholder="명령어 입력..." autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="probability-tab" class="tab-content">
+            <h1>마피아42 확률 계산 시뮬레이터</h1>
+            <div class="probability-calculator">
+                <div class="calc-section">
+                    <h3>1티어 능력</h3>
+                    <div class="checkbox-group">
+                        <label><input type="radio" name="tier1" value="악행"> 악행</label>
+                        <label><input type="radio" name="tier1" value="정의"> 정의</label>
+                    </div>
+                </div>
+                
+                <div class="calc-section" id="tier2-section" style="display: none;">
+                    <h3>2티어 능력 (직업)</h3>
+                    <div class="checkbox-group" id="tier2-checkboxes"></div>
+                    <div class="probability-display" id="tier2-probability"></div>
+                </div>
+                
+                <div class="calc-section" id="tier3-section" style="display: none;">
+                    <h3>3티어 능력</h3>
+                    <div class="checkbox-group" id="tier3-checkboxes"></div>
+                    <div class="probability-display" id="tier3-probability"></div>
+                </div>
+                
+                <div class="calc-section" id="tier4-section" style="display: none;">
+                    <h3>4티어 능력</h3>
+                    <div class="checkbox-group" id="tier4-checkboxes"></div>
+                </div>
+                
+                <div class="calc-section" id="tier5-section" style="display: none;">
+                    <h3>5티어 능력</h3>
+                    <div class="checkbox-group" id="tier5-checkboxes"></div>
+                </div>
+                
+                <div class="calc-section" id="tier6-section" style="display: none;">
+                    <h3>6티어 능력</h3>
+                    <div class="checkbox-group" id="tier6-checkboxes"></div>
+                </div>
+                
+                <div class="calc-section" id="order-option" style="display: none;">
+                    <label><input type="checkbox" id="order-flexible"> 순서 바꿔도 됨 </label>
+                </div>
+                
+                <div class="calc-section">
+                    <div class="final-probability" id="final-probability">
+                        <h2>최종 확률: -</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
